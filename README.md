@@ -1,1 +1,1 @@
-吴恩达Machine Learning视频的课程作业，分别用Octave和Python编写
+吴恩达Machine Learning视频的课程作业，分别用Octave和Python编写。
