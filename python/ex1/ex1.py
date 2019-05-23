@@ -1,10 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import numpy as np
-import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
-
 """
 Machine Learning Online Class - Exercise 1: Linear Regression
 
@@ -14,10 +10,14 @@ y refers to the profit in $10,000s
 author: zhuzi   version: 1.0    date: 2019/05/15
 """
 
+import numpy as np
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+
 # COMPUTECOST Compute cost for linear regression
 # J = COMPUTECOST(X, y, theta) computes the cost of using theta as the
 # parameter for linear regression to fit the data points in X and y
-
 def computeCost(X, y, theta):
 
     return np.mean((X @ theta - y)**2) / 2
