@@ -10,13 +10,14 @@ function plotDecisionBoundary(theta, X, y)
 
 % Plot Data
 plotData(X(:,2:3), y);
-hold on
+hold on;
 
 if size(X, 2) <= 3
     % Only need 2 points to define a line, so choose two endpoints
     plot_x = [min(X(:,2))-2,  max(X(:,2))+2];
 
     % Calculate the decision boundary line
+    % 解释一下，求出的theta其实是最小代价所代表的那个水平切平面，θ1 + θ2‧X2 + θ3‧X3 = 0
     plot_y = (-1./theta(3)).*(theta(2).*plot_x + theta(1));
 
     % Plot, and adjust axes for better viewing
@@ -40,7 +41,7 @@ else
     z = z'; % important to transpose z before calling contour
 
     % Plot z = 0
-    % Notice you need to specify the range [0, 0]
+    % Notice you need to specify the range [0, 0]，因为theta*X=0是决策边界
     contour(u, v, z, [0, 0], 'LineWidth', 2)
 end
 hold off

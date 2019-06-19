@@ -48,7 +48,6 @@ hold off;
 fprintf('\nProgram paused. Press enter to continue.\n');
 pause;
 
-
 %% ============ Part 2: Compute Cost and Gradient ============
 %  In this part of the exercise, you will implement the cost and gradient
 %  for logistic regression. You neeed to complete the code in 
@@ -84,7 +83,6 @@ fprintf('Expected gradients (approx):\n 0.043\n 2.566\n 2.647\n');
 
 fprintf('\nProgram paused. Press enter to continue.\n');
 pause;
-
 
 %% ============= Part 3: Optimizing using fminunc  =============
 %  In this exercise, you will use a built-in function (fminunc) to find the
@@ -147,5 +145,3 @@ p = predict(theta, X);
 fprintf('Train Accuracy: %f\n', mean(double(p == y)) * 100);
 fprintf('Expected accuracy (approx): 89.0\n');
 fprintf('\n');
-
-

@@ -107,6 +107,7 @@ pause;
 initial_theta = zeros(size(X, 2), 1);
 
 % Set regularization parameter lambda to 1 (you should vary this)
+% 强烈建议多试几次，并保存图像进行对比（0即不进行正则化）
 lambda = 1;
 
 % Set Options
@@ -133,4 +134,3 @@ p = predict(theta, X);
 
 fprintf('Train Accuracy: %f\n', mean(double(p == y)) * 100);
 fprintf('Expected accuracy (with lambda = 1): 83.1 (approx)\n');
-
