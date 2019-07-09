@@ -11,7 +11,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import scipy.optimize as op
 
-
 def plotData(X, y):
     # PLOTDATA Plots the data points X and y into a new figure
     # PLOTDATA(x,y) plots the data points with + for the positive examples
@@ -19,8 +18,9 @@ def plotData(X, y):
     pos = np.where(y == 1)[0]
     neg = np.where(y == 0)[0]
 
-    plt.scatter(X[pos, 0], X[pos, 1], marker='+', label='y=1')
-    plt.scatter(X[neg, 0], X[neg, 1], marker='o', label='y=0')
+    global admitted, notadmitted
+    admitted = plt.scatter(X[pos, 0], X[pos, 1], marker='+', label='y=1')
+    notadmitted = plt.scatter(X[neg, 0], X[neg, 1], marker='o', label='y=0')
 
 
 def mapFeature(X1, X2):
@@ -121,7 +121,7 @@ def plotDecisionBoundary(theta, X, y):
         # Plot z = 0
         # Notice you need to specify the levels [0]，因为theta*X=0是决策边界
         C = plt.contour(u, v, z, levels=[0])
-        plt.legend([C.collections[0]], ['Decision Boundary'])
+        plt.legend([admitted, notadmitted, C.collections[0]], ['y=1', 'y=0', 'Decision Boundary'])
 
 
 def predict(theta, X):
