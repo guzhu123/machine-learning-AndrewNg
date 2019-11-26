@@ -30,11 +30,9 @@ X = [ones(m, 1) X];
 %       for each row.
 %       
 
-
-
-
-
-
+A = X * all_theta';
+% p is the index of max value in a row
+[max_value, p] = max(A, [], 2);
 
 % =========================================================================
 
