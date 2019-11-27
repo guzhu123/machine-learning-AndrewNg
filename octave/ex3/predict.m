@@ -21,13 +21,16 @@ p = zeros(size(X, 1), 1);
 %       can use max(A, [], 2) to obtain the max for each row.
 %
 
-
-
-
-
-
-
-
+% add bias unit
+X = [ones(m, 1), X];
+% calculate hidden layer
+a = sigmoid(X * Theta1');
+% add bias unit
+a = [ones(size(a, 1), 1), a];
+% calculate output layer
+a = sigmoid(a * Theta2');
+% get max value and index
+[max_value, p] = max(a, [], 2);
 
 % =========================================================================
 
